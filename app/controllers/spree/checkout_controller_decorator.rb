@@ -26,7 +26,7 @@ Spree::CheckoutController.class_eval do
           :metadata     => {
             :order => @order.id
           },
-          :method       => Mollie::API::Object::Method::IDEAL,
+          :method       => Mollie::API::Object::Method::CREDITCARD,
           :issuer       => params[:order][:payments_attributes].first.to_hash[:issuer_id]})
         
         spree_payment = @order.payments.build(
