@@ -1,7 +1,7 @@
 require "Mollie/API/Client"
 module Spree 
   class Gateway::Mollie < Gateway
-    preference :partner_id, :string, default: "test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+    preference :partner_id, :string, default: "test_kBn4UATMKjcRD4VGEQPsz5UVuyQ6bA"
     
     def provider_class
       ::Mollie::API::Client
@@ -12,7 +12,7 @@ module Spree
     end
 
     def method_type
-      "mollie"
+      "Mollie"
     end
    
     def provider

@@ -8,17 +8,15 @@ Spree::CheckoutController.class_eval do
 
   # The actual payment handeling
   #
-  # We're only taking iDeal into account 
+  # We're only taking Creditcard into account 
   def pay_with_mollie
-    puts "HOOOOEOER"
+
     return unless params[:state] == 'payment'
     begin
       pm_id = params[:order][:payments_attributes].first[:payment_method_id]
       payment_method = Spree::PaymentMethod.find(pm_id)
 
       if payment_method && payment_method.is_a?(Spree::Gateway::Mollie)
-        puts @order.inspect
-        puts @order.total.to_f
         payment = payment_method.provider.payments.create({ 
           :amount       => @order.total.to_f,
           :description  => @order.number,
@@ -38,7 +36,7 @@ Spree::CheckoutController.class_eval do
         spree_payment.save!
         spree_payment.pend!
 
-        puts payment.inspect
+
         redirect_to payment.getPaymentUrl
       end
     rescue Mollie::API::Exception => e
@@ -49,7 +47,7 @@ Spree::CheckoutController.class_eval do
 
   # Looks up our Mollie payment gateway defined app/model
   # 
-  # We're only taking iDeal into account here for now. But it
+  # We're only taking CreditCard into account here for now. But it
   # should be trivial to extend this to other payment methods 
   # Mollie offers. We can ask the Mollie API for a list of those
   # methods by calling method.provider.methods the next step 

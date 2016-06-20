@@ -7,10 +7,10 @@ require "spree_mollie/version"
 Gem::Specification.new do |s|
   s.name        = "spree_mollie"
   s.version     = SpreeMollie::VERSION
-  s.authors     = ["Thomas T. Cremers"]
-  s.email       = ["thomas@vicinitysoftware.com"]
-  s.homepage    = "http://vicinitysoftware.com"
-  s.summary     = "Spree Mollie payment gateway (iDeal)"
+  s.authors     = ["J Clackett"]
+  s.email       = ["jclackett@gmail.com"]
+  s.homepage    = "http://www.jackandgeorge.co"
+  s.summary     = "Spree Mollie payment gateway (CreditCard)"
   s.description = "Spree Mollie payment gateway based on the Mollie ruby gem developed by Mollie"
   s.license     = "MIT"
 
