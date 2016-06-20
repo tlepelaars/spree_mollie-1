@@ -12,7 +12,7 @@ module Spree
     end
 
     def method_type
-      "Mollie"
+      "mollie"
     end
    
     def provider
