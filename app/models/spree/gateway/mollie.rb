@@ -24,9 +24,6 @@ module Spree
     end
 
     def purchase(amount, express_checkout, gateway_options={})
-      puts amount.inspect
-      puts express_checkout.inspect
-      puts gateway_options.inspect
 
       provider.payment.create(
         amount: amount,
