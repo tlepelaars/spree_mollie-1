@@ -19,8 +19,5 @@ Gem::Specification.new do |s|
 
   s.requirements << 'none'
 
-  s.add_dependency "mollie-api-ruby", "~> 1.1.3"
-  s.add_dependency 'spree_core', '~> 3.1.0.beta'
-
   s.add_development_dependency "sqlite3"
 end
